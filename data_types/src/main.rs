@@ -27,4 +27,28 @@ fn main() {
     println!("tup.1={}", tup.1);
     let tup = ();
     println!("tup={:?}", tup);
+
+    let ar = [1, 45, 33, -4];
+    println!("ar={:?}", ar);
+    let ar: [i32; 5] = [1, 4, 7, 2, 1];
+    println!("ar={:?}", ar);
+    let months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ];
+    println!("months={:?}", months);
+    let may = months[4];
+    println!("may={:?}", may);
+    let ar = [3; 5];
+    println!("ar={:?}", ar);
 }
