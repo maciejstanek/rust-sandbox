@@ -17,4 +17,14 @@ fn main() {
     println!("x8={}", x8);
     let x9: f32 = 3.0;
     println!("x8={}", x9);
+
+    let tup: (u8, i32, f64) = (b'A', 123456, 12345.6789);
+    let (x, y, z) = tup;
+    println!("(x, y, z)=({}, {}, {})", x, y, z);
+    println!("tup={:?}", tup);
+    let tup = (12345886, 5.6789, b'Z');
+    println!("tup={:?}", tup);
+    println!("tup.1={}", tup.1);
+    let tup = ();
+    println!("tup={:?}", tup);
 }
