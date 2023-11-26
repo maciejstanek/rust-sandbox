@@ -14,4 +14,8 @@ fn main() {
         println!("inner a={}", a);
     }
     println!("outer after a={}", a);
+
+    let spaces = "    ";
+    let spaces = spaces.len();
+    println!("spaces={}", spaces);
 }
