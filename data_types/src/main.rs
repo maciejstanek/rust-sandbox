@@ -13,4 +13,8 @@ fn main() {
     println!("x6={}", x6);
     let x7 = 123u8;
     println!("x7={}", x7);
+    let x8 = 2.0;
+    println!("x8={}", x8);
+    let x9: f32 = 3.0;
+    println!("x8={}", x9);
 }
