@@ -4,9 +4,8 @@ use std::io;
 use std::io::Write;
 
 fn main() {
-    println!("Guess the number!");
+    println!("Guess the number between 1 and 100!");
     let secret = rand::thread_rng().gen_range(1..=100);
-    println!("DBG: secret={}", secret);
     loop {
         print!("Input your guess: ");
         io::stdout().flush().unwrap(); // unwrap discards any errors
