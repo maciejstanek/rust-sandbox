@@ -11,4 +11,6 @@ fn main() {
     println!("x5={}", x5);
     let x6: u8 = b'A';
     println!("x6={}", x6);
+    let x7 = 123u8;
+    println!("x7={}", x7);
 }
