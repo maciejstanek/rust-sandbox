@@ -24,4 +24,14 @@ fn main() {
     let condition = false;
     let number = if condition { 5 } else { 6 };
     println!("selected {}", number);
+
+    let mut count = 0;
+    let result = loop {
+        count += 1;
+        println!("loop {}", count);
+        if count == 10 {
+            break count * 2;
+        }
+    };
+    println!("result {}", result);
 }
