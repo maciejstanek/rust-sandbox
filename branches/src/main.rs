@@ -59,4 +59,14 @@ fn main() {
         x -= 1;
     }
     println!("liftoff!");
+
+    let a = [3, 1, 4, 1, 5, 9, 2, 6];
+    let mut i = 0;
+    while i < a.len() {
+        println!("a[{}]={}", i, a[i]);
+        i += 1;
+    }
+    for el in a {
+        println!("el={}", el);
+    }
 }
