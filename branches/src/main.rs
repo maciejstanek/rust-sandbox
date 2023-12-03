@@ -34,4 +34,22 @@ fn main() {
         }
     };
     println!("result {}", result);
+
+    let mut count = 0;
+    'up: loop {
+        println!("count={}", count);
+        let mut rem = 10;
+        loop {
+            println!("rem={}", rem);
+            if rem == 9 {
+                break;
+            }
+            if count == 2 {
+                break 'up;
+            }
+            rem -= 1;
+        }
+        count += 1;
+    }
+    println!("end count={}", count);
 }
