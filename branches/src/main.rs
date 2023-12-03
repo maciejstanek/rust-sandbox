@@ -52,4 +52,11 @@ fn main() {
         count += 1;
     }
     println!("end count={}", count);
+
+    let mut x = 3;
+    while x != 0 {
+        println!("{}", x);
+        x -= 1;
+    }
+    println!("liftoff!");
 }
