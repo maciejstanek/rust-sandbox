@@ -69,4 +69,8 @@ fn main() {
     for el in a {
         println!("el={}", el);
     }
+    for el in (1..7).rev() {
+        println!("{}!", el);
+    }
+    println!("liftoff!");
 }
