@@ -14,7 +14,7 @@ fn f2c(f: f64) -> f64 {
     (f + FARENHEIT_OFFSET) * FARENHEIT_FACTOR
 }
 fn c2f(c: f64) -> f64 {
-    c / FARENHEIT_FACTOR + FARENHEIT_OFFSET
+    (c / FARENHEIT_FACTOR) - FARENHEIT_OFFSET
 }
 
 fn main() {
@@ -85,4 +85,24 @@ fn main() {
     };
 
     println!("The temperature is {} in the target unit.", output_value);
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    const EPSILON: f64 = 0.001;
+
+    #[test]
+    fn test_k2c() {
+        assert!((0.0 - c2k(k2c(0.0))) < EPSILON);
+        assert!((100.0 - c2k(k2c(100.0))) < EPSILON);
+        assert!((300.0 - k2c(c2k(300.0))) < EPSILON);
+    }
+
+    #[test]
+    fn test_c2f() {
+        assert!((0.0 - f2c(c2f(0.0))) < EPSILON);
+        assert!((100.0 - f2c(c2f(100.0))) < EPSILON);
+        assert!((100.0 - c2f(f2c(100.0))) < EPSILON);
+    }
 }
