@@ -33,7 +33,7 @@ fn main() {
     println!("first word of '{}' is {}", one_word, first_word2(&one_word));
 }
 
-fn first_word2(s: &String) -> &str {
+fn first_word2(s: &str) -> &str {
     let bytes = s.as_bytes();
     for (i, &item) in bytes.iter().enumerate() {
         if item == b' ' {
