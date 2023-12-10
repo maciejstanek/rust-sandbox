@@ -21,6 +21,26 @@ fn main() {
         one_word,
         first_word(&one_word)
     );
+    println!("string slice 2..8 -> {}", &three_words[2..8]);
+    println!("string slice 2.. -> {}", &three_words[2..]);
+    println!("string slice ..8 -> {}", &three_words[..8]);
+    println!("string slice .. -> {}", &three_words[..]);
+    println!(
+        "first word of '{}' is {}",
+        three_words,
+        first_word2(&three_words)
+    );
+    println!("first word of '{}' is {}", one_word, first_word2(&one_word));
+}
+
+fn first_word2(s: &String) -> &str {
+    let bytes = s.as_bytes();
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[..i];
+        }
+    }
+    &s[..]
 }
 
 fn first_word(s: &String) -> usize {
