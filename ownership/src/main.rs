@@ -31,6 +31,10 @@ fn main() {
         first_word2(&three_words)
     );
     println!("first word of '{}' is {}", one_word, first_word2(&one_word));
+
+    let a = [2, 1, 3, 7];
+    let slice = &a[1..3];
+    assert_eq!(slice, &[1, 3]);
 }
 
 fn first_word2(s: &str) -> &str {
