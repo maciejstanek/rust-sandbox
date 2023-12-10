@@ -8,6 +8,29 @@ fn main() {
     change(&mut s1);
     let len = calculate_length(&s1);
     println!("The length of '{}' is {}.", s1, len);
+
+    let three_words = String::from("lorem ipsum dolor");
+    println!(
+        "first word index of '{}' is {}",
+        three_words,
+        first_word(&three_words)
+    );
+    let one_word = String::from("duck");
+    println!(
+        "first word index of '{}' is {}",
+        one_word,
+        first_word(&one_word)
+    );
+}
+
+fn first_word(s: &String) -> usize {
+    let bytes = s.as_bytes();
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return i;
+        }
+    }
+    s.len()
 }
 
 fn calculate_length(s: &String) -> usize {
