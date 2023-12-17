@@ -5,10 +5,13 @@ struct Rect {
 }
 
 fn main() {
+    let scale = 5;
     let rect = Rect {
-        width: 2,
+        width: dbg!(2 * scale),
         height: 6,
     };
+    println!("{:#?}", rect);
+    dbg!(&rect);
     println!("area of {:?} is {}", &rect, calculate_area(&rect));
 }
 
