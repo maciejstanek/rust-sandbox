@@ -21,6 +21,10 @@ fn print_user(user: User) {
     );
 }
 
+struct Color(i32, i32, i32);
+
+struct UnitStruct;
+
 fn main() {
     let mut user1 = User {
         active: true,
@@ -37,4 +41,10 @@ fn main() {
         ..user2
     };
     print_user(user3);
+
+    let pink = Color(255, 0, 127);
+    println!("pink.0={}", pink.0);
+    println!("pink.1={}", pink.1);
+    println!("pink.2={}", pink.2);
+    let unit = UnitStruct;
 }
