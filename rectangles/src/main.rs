@@ -1,8 +1,16 @@
-fn main() {
-    let rect = (2, 6);
-    println!("area={}", calculate_rectangle_area(rect));
+struct Rect {
+    width: u32,
+    height: u32,
 }
 
-fn calculate_rectangle_area(rect: (u32, u32)) -> u32 {
-    rect.0 * rect.1
+fn main() {
+    let rect = Rect {
+        width: 2,
+        height: 6,
+    };
+    println!("area={}", calculate_rectangle_area(&rect));
+}
+
+fn calculate_area(rect: &Rect) -> u32 {
+    rect.width * rect.height
 }
