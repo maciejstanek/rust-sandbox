@@ -4,6 +4,12 @@ struct Rect {
     height: u32,
 }
 
+impl Rect {
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+}
+
 fn main() {
     let scale = 5;
     let rect = Rect {
@@ -13,6 +19,7 @@ fn main() {
     println!("{:#?}", rect);
     dbg!(&rect);
     println!("area of {:?} is {}", &rect, calculate_area(&rect));
+    println!("area of {:?} is {}", &rect, rect.area());
 }
 
 fn calculate_area(rect: &Rect) -> u32 {
