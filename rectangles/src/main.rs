@@ -11,6 +11,12 @@ impl Rect {
     fn can_hold(&self, other: &Self) -> bool {
         self.width >= other.width && self.height >= other.height
     }
+    fn build_square(side: u32) -> Self {
+        Self {
+            width: side,
+            height: side,
+        }
+    }
 }
 
 fn main() {
@@ -38,6 +44,10 @@ fn main() {
     println!("Can hold the smaller rect?: {}", rect.can_hold(&smaller));
     println!("Can hold the larger rect?: {}", rect.can_hold(&larger));
     println!("Can hold the longer rect?: {}", rect.can_hold(&longer));
+    println!(
+        "Can hold the square?: {}",
+        rect.can_hold(&Rect::build_square(3))
+    );
 }
 
 fn calculate_area(rect: &Rect) -> u32 {
